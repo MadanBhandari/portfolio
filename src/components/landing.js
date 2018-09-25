@@ -56,7 +56,29 @@ const LandingOuter = styled.div`
     width: 25rem;
     padding-top: 0;
     .name{
-      margin : 0.5em 0;
+      color: #4F5C63;
+      letter-spacing: -0.025rem;
+      width: 100%;
+      font-size: 2.25em;
+      line-height: 1.25;
+      font-weight: 300;
+    }
+    .job{
+      color: #8797A1;
+      letter-spacing: 0.025rem;
+      width: calc(100% + 0.025rem);
+      font-size: 1em;
+      line-height: 1.5;
+    }
+    hr{
+      width: 10%;
+      position: relative;
+      padding: 0;
+      border: 0;
+      height: 1.75px;
+      background: #d2d2d2;
+      border-radius: 10em;
+      margin: 1em auto;
     }
     .image{
       margin-top : 1em;
