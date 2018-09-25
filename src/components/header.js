@@ -27,6 +27,7 @@ const LeftNav = styled.div`
 const RightNav = styled.div`
   position : relative;
   a {
+    padding-left: 1.75em;
     color: #fff;
     text-decoration : none;
   }
@@ -41,6 +42,9 @@ const Header = () => (
         </Link>
       </LeftNav>
       <RightNav>
+        <Link to="/home">
+          Home
+        </Link>
         <Link to="/blog">
           Blogs
         </Link>
