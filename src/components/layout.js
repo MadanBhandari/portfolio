@@ -7,6 +7,7 @@ const AppLayout = styled.div`
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  padding-top: 3em;
 `
 
 const Layout = ({ children }) => (

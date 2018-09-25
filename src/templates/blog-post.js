@@ -1,22 +1,44 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Layout from '../components/layout'
+import styled from 'styled-components'
+
+const PostWrapper = styled.div`
+  position : relative;
+`
+const PostHeader = styled.div`
+  position : relative;
+  p {
+    padding-left: 0.5em;
+    font-style : italic;
+    color: #ccc;
+  }
+`
+const PostContent = styled.div`
+  position : relative;
+  line-height: 1.25em;
+`
 
 export default function Template({
   data 
 }) {
-  const post = data.markdownRemark; 
+  const post = data.markdownRemark
   return (
-    <div className="blog-post-container">
+    <Layout>
      <Helmet title={`${post.frontmatter.title} - Madan Bhandari`} />
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
-        <div
-          className="blog-post-content"
+      <PostWrapper>
+        <PostHeader>
+          <h2>
+            {post.frontmatter.title}
+          </h2>
+          <p>Posted on {post.frontmatter.date}</p>
+        </PostHeader>
+        <PostContent
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </div>
-    </div>
-  );
+      </PostWrapper>
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`
@@ -31,4 +53,3 @@ export const pageQuery = graphql`
     }
   }
 `
-;

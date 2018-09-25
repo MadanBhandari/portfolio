@@ -1,11 +1,11 @@
-import React from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
+import React from 'react'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 
 const BlogList = styled.div`
-  padding-top: 3em;
+  
 `
 const BlogPreview = styled.div`
   position: relative;
