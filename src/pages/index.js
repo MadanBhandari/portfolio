@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
+import Landing from '../components/landing'
 
 const IndexPage = () => (
-  <Layout>
+  <Landing>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </Landing>
 )
 
 export default IndexPage
