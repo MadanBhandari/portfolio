@@ -1,20 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Header from './header'
 import './layout.css'
 
-const AppLayout = styled.div`
+const AppWrapper = styled.div`
+  
+`
+const AppContent = styled.div`
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 3em;
+  padding: 1em;
 `
 
 const Layout = ({ children }) => (
-  <AppLayout>
-    {/* <Header /> */}
-    {children}
-  </AppLayout>
+  <AppWrapper>
+    <Header />
+    <AppContent>
+      {children}
+    </AppContent>
+  </AppWrapper>
 )
 
 Layout.propTypes = {
