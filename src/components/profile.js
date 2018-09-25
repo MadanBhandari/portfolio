@@ -1,13 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faStackOverflow, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import profileImage from '../images/profile.svg'
 
-const LandingWrapper = styled.div`
+const ProfileCardWrapper = styled.div`
   font-family: 'Ubuntu', sans-serif;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
@@ -34,7 +32,7 @@ const LandingWrapper = styled.div`
     transform: scale(1);
   }
 `
-const LandingOuter = styled.div`
+const ProfileCardOuter = styled.div`
   display: flex;
   position: relative;
   max-width: 100%;
@@ -137,58 +135,41 @@ const SocialIcons = styled.div`
   }
 `
 
-const Landing = () => (
-  <StaticQuery
-    query={graphql`
-      query LandingPageQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-          <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
-        </Helmet>
-        <LandingWrapper>
-          <LandingOuter>
-            <div className="inner">
-              <div className="image">
-                <img src={profileImage} alt="" />
-              </div>
-              <h3 className="name">
-                Madan Bhandari
-              </h3>
-              <p className="job">
-                FullStack Developer <br /> <i>New Delhi, India</i>
-              </p>
-              <hr />
-              <SocialIcons>
-                <a className="twitter" href="https://twitter.com/MadankBhandari"><FontAwesomeIcon icon={faTwitter} /></a>
-                <a className="github" href="https://github.com/MadanBhandari"><FontAwesomeIcon icon={faGithub} /></a>
-                <a className="stack-overflow" href="https://stackoverflow.com/users/3040180"><FontAwesomeIcon icon={faStackOverflow} /></a>
-                <a className="linkedin" href="/https://www.linkedin.com/in/madankbhandari/"><FontAwesomeIcon icon={faLinkedin} /></a>
-              </SocialIcons>
-            </div>
-          </LandingOuter>
-        </LandingWrapper>
-      </>
-    )}
-  />
+const ProfileCard = () => (
+  <>
+    <Helmet
+      title='Madan Bhandari - Fullstack Developer'
+      meta={[
+        { name: 'description', content: 'Madan Bhandari Portfolio' },
+        { name: 'keywords', content: 'fullstack, developer, portfolio' },
+      ]}
+    >
+      <html lang="en" />
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+    </Helmet>
+    <ProfileCardWrapper>
+      <ProfileCardOuter>
+        <div className="inner">
+          <div className="image">
+            <img src={profileImage} alt="" />
+          </div>
+          <h3 className="name">
+            Madan Bhandari
+          </h3>
+          <p className="job">
+            FullStack Developer <br /> <i>New Delhi, India</i>
+          </p>
+          <hr />
+          <SocialIcons>
+            <a className="twitter" href="https://twitter.com/MadankBhandari"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a className="github" href="https://github.com/MadanBhandari"><FontAwesomeIcon icon={faGithub} /></a>
+            <a className="stack-overflow" href="https://stackoverflow.com/users/3040180"><FontAwesomeIcon icon={faStackOverflow} /></a>
+            <a className="linkedin" href="/https://www.linkedin.com/in/madankbhandari/"><FontAwesomeIcon icon={faLinkedin} /></a>
+          </SocialIcons>
+        </div>
+      </ProfileCardOuter>
+    </ProfileCardWrapper>
+  </>
 )
 
-Landing.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Landing
+export default ProfileCard

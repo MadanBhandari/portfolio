@@ -1,10 +1,9 @@
 import React from 'react'
 
-import Landing from '../components/landing'
+import ProfileCard from '../components/profile'
 
 const IndexPage = () => (
-  <Landing>
-  </Landing>
+  <ProfileCard />
 )
 
 export default IndexPage
