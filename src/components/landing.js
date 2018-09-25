@@ -5,22 +5,15 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faStackOverflow, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import profileImage from '../images/profile.svg'
 
 const LandingWrapper = styled.div`
-  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  max-width: 100%;
   -webkit-overflow-scrolling: touch;
   display: flex;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
   min-height: calc(100vh - 4rem);
   position: relative;
@@ -36,9 +29,6 @@ const LandingWrapper = styled.div`
     width: 100vw;
     height: 100vh;
     z-index: 0;
-    -moz-pointer-events: none;
-    -webkit-pointer-events: none;
-    -ms-pointer-events: none;
     pointer-events: none;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -49,21 +39,12 @@ const LandingOuter = styled.div`
   position: relative;
   max-width: 100%;
   z-index: 1;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
   box-shadow: 0rem 1.375rem 1.75rem 0rem rgba(27,54,74,0.09);
   border-radius: 0.375rem 0.375rem 0.375rem 0.375rem;
-  -moz-transition: opacity 1s ease 0s,-moz-transform 1s ease 0s;
-  -webkit-transition: opacity 1s ease 0s,-webkit-transform 1s ease 0s;
-  -ms-transition: opacity 1s ease 0s,-ms-transform 1s ease 0s;
   transition: opacity 1s ease 0s,transform 1s ease 0s;
   .inner{
     background-color: #FFFFFF;
@@ -155,18 +136,19 @@ const Landing = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
         </Helmet>
         <LandingWrapper>
           <LandingOuter>
             <div className="inner">
               <div className="image">
-                <img src="images/profile.svg" alt=""/>
+                <img src={profileImage} alt="" />
               </div>
               <h3 className="name">
                 Madan Bhandari
               </h3>
               <p className="job">
-                FullStack Developer <br/> <i>New Delhi, India</i>
+                FullStack Developer <br /> <i>New Delhi, India</i>
               </p>
               <hr />
               <SocialIcons>
