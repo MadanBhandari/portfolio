@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: MadanBhandari/portfolio
+  branch: master
 
 media_folder: static/assets
 public_folder: assets
