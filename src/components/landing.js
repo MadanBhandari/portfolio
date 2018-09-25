@@ -134,7 +134,7 @@ const SocialIcons = styled.div`
   }
 `
 
-const Landing = ({ children }) => (
+const Landing = () => (
   <StaticQuery
     query={graphql`
       query LandingPageQuery {
