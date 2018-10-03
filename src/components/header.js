@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const HeaderWrapper = styled.div`
   position : relative;
-  background-color: rebeccapurple;
+  background-color: #fff;
   margin-bottom : 1.45rem;
 `
 const HeaderContent = styled.div`
@@ -18,7 +18,7 @@ const HeaderContent = styled.div`
 const LeftNav = styled.div`
   position : relative;
   .logo{
-    color: #fff;
+    color: #444452;
     font-weight : 600;
     text-decoration : none;
   }
@@ -28,7 +28,7 @@ const RightNav = styled.div`
   position : relative;
   a {
     padding-left: 1.75em;
-    color: #fff;
+    color: #444452;
     text-decoration : none;
   }
 `
