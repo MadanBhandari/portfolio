@@ -28,6 +28,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       result.data.allMarkdownRemark.edges
       .forEach(({ node }) => {
         createPage({
+          pathPrefix: `/blog`,
           path: node.frontmatter.path,
           component: blogPostTemplate,
           context: {} // additional data can be passed via context
