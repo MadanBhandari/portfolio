@@ -5,24 +5,35 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 
 const BlogList = styled.div`
-  
+  padding-top: 1.05rem;
 `
-const BlogPreview = styled.div`
+const BlogPreview = styled.article`
   position: relative;
-  margin: 1em 0;
-  padding: 0.5em 0;
+  box-shadow: rgba(25, 17, 34, 0.05) 0px 3px 10px;
+  margin-left: -2.1rem;
+  margin-right: -2.1rem;
+  margin-bottom: 1.05rem;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 2.1rem 3.15rem;
+  &:hover{
+    box-shadow: rgba(25, 17, 34, 0.1) 0px 10px 42px;
+    transform: translateY(-4px);
+  }
 `
 const BlogTitle = styled.div`
   font-size : 1.5em;
   a{
+    display: block;
+    color: inherit;
     text-decoration : none; 
   }
 `
 
 const BlogInfo = styled.div`
-  font-size : 0.75em;
+  font-size: 1em;
   color: #ccc;
-  padding-left : 0.5em;
+  padding-top: 0.75em;
 `
 
 export default function BlogPage({ data }) {
@@ -36,14 +47,13 @@ export default function BlogPage({ data }) {
           { name: 'keywords', content: 'sample, something' },
         ]}
       >
-        <html lang="en" />
       </Helmet>
       <BlogList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <BlogPreview key={post.id}>
+              <BlogPreview key={post.id} href={post.frontmatter.path}>
                 <BlogTitle>
                   <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                 </BlogTitle>
