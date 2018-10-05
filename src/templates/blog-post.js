@@ -17,6 +17,17 @@ const PostHeader = styled.div`
 const PostContent = styled.div`
   position : relative;
   line-height: 1.25em;
+  img{
+    max-width : 100%;
+    height: auto;
+  }
+  blockquote {
+    position: relative;
+    background: #ecebeb;
+    padding: 0.125em 0;
+    border-left: solid 2px #ccc;
+    padding-left: 1em;
+  }
 `
 
 export default function Template({
