@@ -3,7 +3,9 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const HeaderWrapper = styled.div`
-  position : relative;
+  position : fixed;
+  width: 100%;
+  z-index: 999;
   background-color: #fff;
   margin-bottom : 1.45rem;
 `
@@ -14,6 +16,16 @@ const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &:after{
+    content: " ";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 1px;
+    background: rgb(245, 243, 247);
+  }
 `
 const LeftNav = styled.div`
   position : relative;
