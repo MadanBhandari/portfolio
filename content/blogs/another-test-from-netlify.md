@@ -5,27 +5,19 @@ title: Another test from Netlify
 ---
 Hello there
 
-
-
 This is just another test post from Netlify
 
-With Images
-
-
+# With Images
 
 ![error msg post](/assets/meteor-test-local.png)
 
-
-
 List Items
 
+* [Item a](https://www.gatsbyjs.org/blog/2018-09-27-reach-router/)
 * Item a
 * Item a
 * Item a
 * Item a
-* Item a
-
-
 
 List Items
 
@@ -34,7 +26,5 @@ List Items
 3. Item a
 4. Item a
 5. Item a
-
-
 
 > This is Quote from some one
