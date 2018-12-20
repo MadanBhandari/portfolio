@@ -69,11 +69,11 @@ export default function BlogPage({ data }) {
   );
 }
 export const pageQuery = graphql`
-  query BlogPageQuery {
+  query ProjectPageQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter : { frontmatter: { type: { eq: "blog" } } }
-      ) {
+      filter : { frontmatter: { type: { eq: "project" } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
