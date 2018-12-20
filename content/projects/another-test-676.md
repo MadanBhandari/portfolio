@@ -1,11 +1,11 @@
 ---
-path: /blog/new-test-app
+path: /project/new-test-apsvghy
 date: 2018-09-25T14:51:33.418Z
-title: Another test from Netlify
+title: Test Project 2
 ---
 Hello there
 
-This is just another test post from Netlify
+Test Project
 
 # With Images
 

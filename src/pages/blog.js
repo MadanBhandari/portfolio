@@ -5,6 +5,15 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 
+const PageTitle = styled.div`
+  position: relative;
+  padding: 2em 0;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+`
+
 const BlogList = styled.div`
   padding-top: 1.05rem;
 `
@@ -49,6 +58,7 @@ export default function BlogPage({ data }) {
         ]}
       >
       </Helmet>
+      <PageTitle>Recent Blogs</PageTitle>
       <BlogList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
@@ -72,12 +82,15 @@ export const pageQuery = graphql`
   query BlogPageQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter : { frontmatter: { type: { eq: "blog" } } }
+      filter : { fields: { collection: { eq: "blogs" } } }
       ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+          	collection
+        	}
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

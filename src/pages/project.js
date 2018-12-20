@@ -5,10 +5,23 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 
-const BlogList = styled.div`
+const PageTitle = styled.div`
+  position: relative;
+  padding: 2em 0;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+`
+
+const ProjectList = styled.div`
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 1.05rem;
 `
-const BlogPreview = styled.article`
+const ProjectPreview = styled.article`
   position: relative;
   box-shadow: rgba(25, 17, 34, 0.05) 0px 3px 10px;
   margin-left: -2.1rem;
@@ -17,12 +30,13 @@ const BlogPreview = styled.article`
   background: rgb(255, 255, 255);
   border-radius: 4px;
   padding: 2.1rem 3.15rem;
+  width: 40%;
   &:hover{
     box-shadow: rgba(25, 17, 34, 0.1) 0px 10px 42px;
     transform: translateY(-4px);
   }
 `
-const BlogTitle = styled.div`
+const ProjectTitle = styled.div`
   font-size : 1.5em;
   a{
     display: block;
@@ -31,40 +45,32 @@ const BlogTitle = styled.div`
   }
 `
 
-const BlogInfo = styled.div`
-  font-size: 1em;
-  color: #ccc;
-  padding-top: 0.75em;
-`
-
-export default function BlogPage({ data }) {
+export default function ProjectPage({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout>
       <Helmet
-        title='Blogs - Madan Bhandari'
+        title='Projects - Madan Bhandari'
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
         ]}
       >
       </Helmet>
-      <BlogList>
+      <PageTitle>Projects</PageTitle>
+      <ProjectList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <BlogPreview key={post.id} href={post.frontmatter.path}>
-                <BlogTitle>
+              <ProjectPreview key={post.id} href={post.frontmatter.path}>
+                <ProjectTitle>
                   <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-                </BlogTitle>
-                <BlogInfo>
-                  Posted on {post.frontmatter.date}
-                </BlogInfo>
-              </BlogPreview>
+                </ProjectTitle>
+              </ProjectPreview>
             );
           })}
-      </BlogList>
+      </ProjectList>
     </Layout>
   );
 }
@@ -72,12 +78,15 @@ export const pageQuery = graphql`
   query ProjectPageQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter : { frontmatter: { type: { eq: "project" } } }
+      filter : { fields: { collection: { eq: "projects" } } }
     ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+          	collection
+        	}
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
