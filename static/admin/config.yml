@@ -11,6 +11,7 @@ collections:
     folder: content/blogs
     create: true
     fields:
+      - { name: type, label: Type }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
@@ -20,6 +21,7 @@ collections:
     folder: content/projects
     create: true
     fields:
+      - { name: type, label: Type }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
