@@ -77,7 +77,7 @@ export default function Template({
           <h2>
             {post.frontmatter.title}
           </h2>
-          <p>Posted on {post.frontmatter.date}</p>
+          {/* <p>Posted on {post.frontmatter.date}</p> */}
         </PostHeader>
         <PostContent
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -88,7 +88,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query ProjectPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
