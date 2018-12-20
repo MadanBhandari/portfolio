@@ -1,4 +1,5 @@
 ---
+type: 'blog'
 path: "/blog/hello-world-2"
 date: "2017-07-12T17:12:33.962Z"
 title: "The new hello world post"
