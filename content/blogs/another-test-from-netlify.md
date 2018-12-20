@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 path: /blog/new-test-app
 date: 2018-09-25T14:51:33.418Z
 title: Another test from Netlify

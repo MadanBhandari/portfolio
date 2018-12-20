@@ -1,5 +1,4 @@
 ---
-type: 'project'
 path: /project/new-test-app
 date: 2018-09-25T14:51:33.418Z
 title: Test Project

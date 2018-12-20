@@ -42,7 +42,7 @@ export default function BlogPage({ data }) {
   return (
     <Layout>
       <Helmet
-        title='Blogs - Madan Bhandari'
+        title='Projects - Madan Bhandari'
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
@@ -72,12 +72,15 @@ export const pageQuery = graphql`
   query ProjectPageQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter : { frontmatter: { type: { eq: "project" } } }
+      filter : { fields: { collection: { eq: "projects" } } }
     ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+          	collection
+        	}
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
