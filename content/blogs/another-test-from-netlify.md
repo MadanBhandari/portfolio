@@ -1,11 +1,12 @@
 ---
+type: projects
 path: /blog/new-test-app
 date: 2018-09-25T14:51:33.418Z
 title: Another test from Netlify
 ---
 Hello there
 
-This is just another test post from Netlify
+This is just another test post from Netlify -- Okay bhai
 
 # With Images
 
