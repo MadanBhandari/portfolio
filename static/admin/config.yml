@@ -5,11 +5,17 @@ backend:
 media_folder: static/assets
 public_folder: assets
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
 collections:
   - name: blog
     label: Blog
     folder: content/blogs
     create: true
+    slug: blog/{{year}}-{{month}}-{{day}}_{{slug}}
     fields:
       - { name: type, label: Type }
       - { name: path, label: Path }
@@ -20,6 +26,7 @@ collections:
     label: Project
     folder: content/projects
     create: true
+    slug: project/{{year}}-{{month}}-{{day}}_{{slug}}
     fields:
       - { name: type, label: Type }
       - { name: path, label: Path }
