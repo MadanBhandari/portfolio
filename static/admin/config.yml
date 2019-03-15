@@ -15,7 +15,7 @@ collections:
     label: Blog
     folder: content/blogs
     create: true
-    slug: blog/{{year}}-{{month}}-{{day}}_{{slug}}
+    slug: /blog/{{year}}-{{month}}-{{day}}_{{slug}}
     fields:
       - { name: type, label: Type }
       - { name: path, label: Path }
@@ -26,7 +26,7 @@ collections:
     label: Project
     folder: content/projects
     create: true
-    slug: project/{{year}}-{{month}}-{{day}}_{{slug}}
+    slug: /project/{{year}}-{{month}}-{{day}}_{{slug}}
     fields:
       - { name: type, label: Type }
       - { name: path, label: Path }
