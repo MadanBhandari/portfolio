@@ -11,6 +11,17 @@ slug:
   sanitize_replacement: "_"
 
 collections:
+  - name: todos
+    label: Todos
+    folder: content/todos
+    create: true
+    slug: /todo/{{year}}/{{month}}/{{day}}/{{slug}}
+    fields:
+      - { name: type, label: Type }
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
   - name: blog
     label: Blog
     folder: content/blogs
